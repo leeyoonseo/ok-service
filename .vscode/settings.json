@@ -3,8 +3,9 @@
   "scss.validate": false,
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
-      "source.fixAll.stylelint": true,
-        "source.fixAll.eslint": true,
+    "source.fixAll": true
   },
-  "eslint.validate": ["ts", "css", "scss", "vue"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.validate": ["ts", "js", "vue"],
+  "stylelint.validate": ["css", "scss"]
 }

@@ -1,32 +1,30 @@
 <template>
   <div>
-    <!-- <Tutorial /> -->
     <div>
       <h1>버튼</h1>
-      <base-button />
+      <base-button @click.native="handleClick" />
     </div>
-    <button @click="handleClick">
-      테스트
-    </button>
   </div>
 </template>
 
 <script lang="ts">
 // import Vue, { PropOptions } from 'vue'
-import Vue from "vue";
-import BaseButton from "~/components/common/Button/Button.vue";
+import Vue from 'vue';
+import BaseButton from '~/components/common/Button/Button.vue';
 
 export default Vue.extend({
-  name: "MainPage",
+  name: 'MainPage',
   components: {
     BaseButton,
   },
   methods: {
-    handleClick () {
+    handleClick() {
       this.test(123);
+      const a = [1, 4, 5];
+      console.log(a);
     },
-    test (val: number) {
-      console.log("test", val);
+    test(val: number) {
+      console.log('test', val);
     },
   },
 });
