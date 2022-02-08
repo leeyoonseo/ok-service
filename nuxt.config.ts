@@ -41,9 +41,8 @@ const config: NuxtConfig = {
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
+    '@nuxtjs/stylelint-module',
     '@nuxt/typescript-build',
     '@nuxtjs/style-resources',
   ],
