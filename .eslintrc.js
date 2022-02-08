@@ -2,58 +2,14 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true,
-  },
-  parserOptions: {
-    parser: '@babel/eslint-parser',
-    requireConfigFile: false,
+    node: true
   },
   extends: [
-    '@nuxtjs',
-    'plugin:prettier/recommended',
-    'plugin:nuxt/recommended',
+    '@nuxtjs/eslint-config-typescript',
+    'plugin:nuxt/recommended'
   ],
-  plugins: [],
-  rules: {
-    'no-shadow': 'off',
-    'no-console': 'off',
-    'prettier/prettier': [
-      'warn',
-      {
-        printWith: 80,
-        tabWidth: 2,
-        useTabs: false,
-        semi: true,
-        singleQuote: true,
-        arrowParens: 'avoid',
-        bracketSpacing: true,
-        endOfLine: 'auto',
-        htmlWhitespaceSensitivity: 'css',
-        trailingComma: 'es5',
-        requirePragma: false,
-        insertPragma: false,
-        proseWrap: 'preserve',
-        vueIndentScriptAndStyle: false,
-      },
-    ],
-    'default-case': 'warn',
-    'jsdoc/require-jsdoc': 0,
-    'jsdoc/require-returns-description': 0,
-    'jsdoc/require-returns': 0,
-    'jsdoc/check-param-names': 0,
-    'jsdoc/require-param-type': 0,
-    'prefer-destructuring': ['warn', { array: false }],
-    'no-magic-numbers': 0,
-    'jsdoc/no-undefined-types': ['error' | 'warn', { definedTypes: ['float'] }],
-    'import/namespace': 0,
-    'vue/no-unused-vars': ['warn', {}],
-    'vue/no-parsing-error': [0, {}],
-    'no-lonely-if': 0,
-    'vue/attribute-hyphenation': [
-      'always' | 'never',
-      {
-        ignore: ['maxLength'],
-      },
-    ],
-  },
-};
+  plugins: [
+  ],
+  // add your custom rules here
+  rules: {}
+}
