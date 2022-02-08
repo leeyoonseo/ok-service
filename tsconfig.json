@@ -10,10 +10,11 @@
     ],
     "esModuleInterop": true,
     "allowJs": true,
+    "checkJs": true,
+    "noImplicitAny": true,
     "sourceMap": true,
     "strict": true,
     "noEmit": true,
-    "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
       "~/*": [
@@ -24,14 +25,11 @@
       ]
     },
     "types": [
-      "@nuxt/types",
-      "@nuxtjs/axios",
-      "@types/node"
+      "@types/node",
+      "@nuxt/types"
     ]
   },
   "exclude": [
-    "node_modules",
-    ".nuxt",
-    "dist"
+    "node_modules"
   ]
 }
