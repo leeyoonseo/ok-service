@@ -1,7 +1,9 @@
 import { NuxtConfig } from '@nuxt/types';
 
 const config: NuxtConfig = {
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  server: {
+    host: '0.0.0.0',
+  },
   head: {
     title: 'ok-admin',
     htmlAttrs: {
@@ -31,19 +33,23 @@ const config: NuxtConfig = {
       },
     ],
   },
+  dir: {
+    layouts: 'views/layouts',
+    pages: 'views/pages',
+  },
 
-  // css: ['~assets/styles/common.scss'],
-  // styleResources: {
-  //   scss: '~/assets/scss/*.scss',
-  // },
+  css: ['~assets/styles/common.scss'],
+  styleResources: {
+    scss: '~/assets/styles/*.scss',
+  },
 
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
   buildModules: [
-    '@nuxtjs/stylelint-module',
     '@nuxt/typescript-build',
+    '@nuxtjs/stylelint-module',
     '@nuxtjs/style-resources',
   ],
 
@@ -58,8 +64,35 @@ const config: NuxtConfig = {
     baseURL: '/',
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    postcss: false,
+    terser: {
+      terserOptions: {
+        compress: {
+          drop_console: process.env.NODE_ENV === 'production',
+          drop_debugger: process.env.NODE_ENV === 'production',
+        },
+      },
+    },
+    analyze: process.env.NODE_ENV === 'production',
+    cssSourceMap: true,
+    devtools: true,
+    extractCSS: process.env.NODE_ENV === 'production',
+    optimization: {
+      splitChunks:
+        process.env.NODE_ENV === 'production'
+          ? {
+              cacheGroups: {
+                styles: {
+                  name: 'styles',
+                  test: /\.(scss|css)$/,
+                  chunks: 'all',
+                },
+              },
+            }
+          : {},
+    },
+  },
 
   typescript: {
     build: true,
