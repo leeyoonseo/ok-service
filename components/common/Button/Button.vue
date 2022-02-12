@@ -1,5 +1,8 @@
 <template>
-  <button>버튼</button>
+  <button>
+    버튼
+    <span class="icon"></span>
+  </button>
 </template>
 <script lang="ts">
 import Vue from 'vue';

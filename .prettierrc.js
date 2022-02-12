@@ -1,25 +1,36 @@
 module.exports = {
-  arrowParens: 'avoid',
-  bracketSpacing: true,
   endOfLine: 'auto',
-  htmlWhitespaceSensitivity: 'css',
-  printWith: 100,
-  proseWrap: 'preserve',
-  semi: true,
   singleQuote: true,
-  tabWidth: 2,
-  trailingComma: 'all',
-  useTabs: false,
-  vueIndentScriptAndStyle: false,
-  requirePragma: false,
-  insertPragma: false,
-  overrides: [ 
+  quoteProps: "as-needed",
+  printWith: 100,
+  overrides: [
     {
-      files: "*.json",
+      files: [
+        "*.scss",
+        "*.json",
+        "*.d.ts",
+        ".eslintrc.js",
+        ".stylelintrc.js",
+        ".prettierrc.js",
+        "nuxt.config.ts",
+        "webpack.config.js",
+      ],
       options: {
         singleQuote: false,
-        printWith: 200,
-      },
-    }
+      }
+    },
   ],
 }
+
+
+  // bracketSpacing: true,
+  // semi: true,
+  // // arrowParens: 'avoid',
+  // // htmlWhitespaceSensitivity: 'css',
+  // // proseWrap: 'preserve',
+  // tabWidth: 2,
+  // // trailingComma: 'all',
+  // // useTabs: false,
+  // // vueIndentScriptAndStyle: false,
+  // // requirePragma: false,
+  // // insertPragma: false,

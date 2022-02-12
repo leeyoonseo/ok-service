@@ -1,67 +1,80 @@
-import { NuxtConfig } from '@nuxt/types';
+import { NuxtConfig } from "@nuxt/types";
 
 const config: NuxtConfig = {
   server: {
-    host: '0.0.0.0',
+    host: "0.0.0.0",
   },
   head: {
-    title: 'ok-admin',
+    title: "ok-admin",
     htmlAttrs: {
-      lang: 'ko',
+      lang: "ko",
     },
     meta: [
-      { charset: 'utf-8' },
+      { charset: "utf-8" },
       {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
       },
       {
-        hid: 'description',
-        name: 'description',
-        content: '',
+        hid: "description",
+        name: "description",
+        content: "",
       },
       {
-        name: 'format-detection',
-        content: 'telephone=no',
+        name: "format-detection",
+        content: "telephone=no",
       },
     ],
     link: [
       {
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon.ico',
+        rel: "icon",
+        type: "image/x-icon",
+        href: "/favicon.ico",
       },
     ],
   },
   dir: {
-    layouts: 'views/layouts',
-    pages: 'views/pages',
+    layouts: "views/layouts",
+    pages: "views/pages",
   },
-
-  css: ['~assets/styles/common.scss'],
+  css: ["normalize.css/normalize.css", "~assets/styles/common.scss"],
   styleResources: {
-    scss: '~/assets/styles/*.scss',
+    scss: "~/assets/styles/*.scss",
   },
 
   plugins: [],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: [
+    {
+      path: "~/components/common/",
+      prefix: "the",
+      extensions: ["vue"],
+    },
+    {
+      path: "~/components/layout/",
+      prefix: "layout",
+      extensions: ["vue"],
+    },
+    {
+      path: "~/components/template/",
+      extensions: ["vue"],
+    },
+  ],
   buildModules: [
-    '@nuxt/typescript-build',
-    '@nuxtjs/stylelint-module',
-    '@nuxtjs/style-resources',
+    "@nuxt/typescript-build",
+    "@nuxtjs/stylelint-module",
+    "@nuxtjs/style-resources",
   ],
 
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
+    "@nuxtjs/axios",
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseURL: "/",
   },
 
   build: {
@@ -69,24 +82,24 @@ const config: NuxtConfig = {
     terser: {
       terserOptions: {
         compress: {
-          drop_console: process.env.NODE_ENV === 'production',
-          drop_debugger: process.env.NODE_ENV === 'production',
+          drop_console: process.env.NODE_ENV === "production",
+          drop_debugger: process.env.NODE_ENV === "production",
         },
       },
     },
-    analyze: process.env.NODE_ENV === 'production',
+    analyze: process.env.NODE_ENV === "production",
     cssSourceMap: true,
     devtools: true,
-    extractCSS: process.env.NODE_ENV === 'production',
+    extractCSS: process.env.NODE_ENV === "production",
     optimization: {
       splitChunks:
-        process.env.NODE_ENV === 'production'
+        process.env.NODE_ENV === "production"
           ? {
               cacheGroups: {
                 styles: {
-                  name: 'styles',
+                  name: "styles",
                   test: /\.(scss|css)$/,
-                  chunks: 'all',
+                  chunks: "all",
                 },
               },
             }
@@ -98,7 +111,7 @@ const config: NuxtConfig = {
     build: true,
     typeCheck: {
       eslint: {
-        files: './**/*.{ts,js,vue}',
+        files: "./**/*.{ts,js,vue}",
       },
     },
   },
