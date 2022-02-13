@@ -41,9 +41,9 @@ const config: NuxtConfig = {
     layouts: "views/layouts",
     pages: "views/pages",
   },
-  css: ["normalize.css/normalize.css", "~assets/styles/common.scss"],
+  css: ["normalize.css/normalize.css", "~/assets/styles/common.scss"],
   styleResources: {
-    scss: "~/assets/styles/*.scss",
+    scss: ["~/assets/styles/utils/*.scss"],
   },
 
   plugins: [],

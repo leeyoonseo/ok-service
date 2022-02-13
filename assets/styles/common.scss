@@ -1,17 +1,29 @@
 @charset "UTF-8";
+@import "base/reset";
+@import "utils/variables", "utils/mixins";
 
-// TODO: 사용자 정의 속성
-// nuxt에 등록
-// :root {
-//   --foo: red;
-// }
-
-// body {
-//   color: red;
-//   background: yellow;
-// }
+:root {
+  @each $name, $color in $colors {
+    #{$name}: #{$color};
+  }
+}
 
 body {
-  font-family: "Noto Sans KR", -apple-system, system-ui, BlinkMacSystemFont, Roboto, Arial, Helvetica, sans-serif;
   background: #fefefe;
+  color: var(--black);
+  font-family: "Noto Sans KR", -apple-system, system-ui, BlinkMacSystemFont, Roboto, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

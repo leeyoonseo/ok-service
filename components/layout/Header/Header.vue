@@ -1,29 +1,30 @@
 <template>
-  <header>
-    <div>
-      <nuxt-link to="/">
-        <h1>OKAYOON</h1>
+  <header class="header">
+    <div class="header-inner">
+      <nuxt-link class="header-logo" to="/">
+        <h1 class="logo">OKAYOON</h1>
       </nuxt-link>
 
-      <ul>
-        <li>네비1</li>
-        <li>네비2</li>
-        <li>네비3</li>
-        <li>네비4</li>
+      <ul class="header-nav">
+        <li v-for="(nav, index) in 4" :key="index" class="nav-items">
+          <nuxt-link to="/">{{ `네비${index}` }}</nuxt-link>
+        </li>
       </ul>
 
-      <div>
-        <!-- TODO: 로그인 -->
-        <div>
-          <!-- <button>로그인</button> -->
-        </div>
-        <div>
-          <div>사용자</div>
-          <ul>
-            <li>내정보</li>
-            <li>로그아웃</li>
-          </ul>
-        </div>
+      <div class="header-my">
+        <template v-if="!isLogined">
+          <button class="login-button" @click="handleLogin">Sign in</button>
+        </template>
+        <template v-else>
+          <!-- TODO: 아이콘? -->
+          <div class="my-setting">
+            <span class="hidden">Settings</span>
+            <ul class="setting">
+              <li>My info</li>
+              <li>Sign out</li>
+            </ul>
+          </div>
+        </template>
       </div>
     </div>
   </header>
@@ -33,10 +34,15 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'BaseHeader',
-  props: {
-    isLogined: {
-      type: Boolean,
-      required: true,
+  data() {
+    return {
+      isLogined: false,
+    };
+  },
+  methods: {
+    handleLogin() {
+      console.log('handleLogin');
+      this.isLogined = !this.isLogined;
     },
   },
 });

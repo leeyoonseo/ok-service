@@ -1,0 +1,15 @@
+$prefix-path: "~assets/images";
+
+@mixin bg-image($url, $width, $height, $important: false) {
+  @if $important {
+    background-image: url("#{$prefix-path}/#{$url}.png") !important;
+  }
+  /* stylelint-disable-next-line scss/at-if-closing-brace-newline-after */
+  @else {
+    background-image: url("#{$prefix-path}/#{$url}.png");
+  }
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: $width, $height;
+}

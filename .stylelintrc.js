@@ -5,6 +5,7 @@ module.exports = {
     "*.scss"
   ],
   rules: {
+    "order/properties-alphabetical-order": true,
     "no-eol-whitespace": true, // 줄 끝, 닫는 중괄호 뒤 공백 허용 여부
     "color-hex-length": "long", // 16진수 색상에 대해 표기법 지정
     "declaration-block-trailing-semicolon": "always", // 선언 블록 내 후행 세미콜론을 요구

@@ -1,3 +1,75 @@
 header {
-  color: red;
+  background: #ffffff;
+  border-bottom: 1px solid var(--gray-light);
+  width: 100%;
+
+  // TODO:
+
+  &.sticky {
+    // box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.16);
+  }
+
+  .header-inner {
+    align-items: center;
+    display: flex;
+    height: 64px;
+    padding: 0 2%;
+  }
+
+  .header-logo {
+    color: var(--black);
+    text-decoration: none;
+
+    .logo {
+      display: inline-block;
+      font-size: 18px;
+      margin: 0;
+    }
+  }
+
+  .header-nav {
+    display: flex;
+    margin-left: 40px;
+
+    .nav-items {
+
+      & + .nav-items {
+        margin-left: 6px;
+      }
+    }
+  }
+
+  .header-my {
+    margin-left: auto;
+
+    .login-button {
+      background: none;
+      border: none;
+      color: var(--gray);
+      height: 100%;
+      width: 100%;
+
+      &:hover {
+        color: var(--black);
+      }
+    }
+
+    .my-setting {
+      $size: 20px;
+      display: inline-block;
+      width: $size;
+      height: $size;
+      cursor: pointer;
+
+      @include bg-image('icon-setting', $size, $size);
+
+      &:hover {
+        @include bg-image('icon-setting-active', $size, $size);
+      }
+
+      .setting {
+        display: none;
+      }
+    }
+  }
 }
