@@ -9,5 +9,5 @@
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "eslint.validate": ["ts", "js", "vue"],
-  "stylelint.validate": ["css", "scss"],
+  "stylelint.validate": ["scss"],
 }

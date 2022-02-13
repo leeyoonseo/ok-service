@@ -44,5 +44,9 @@
     "stylelint-order": "^5.0.0",
     "stylelint-scss": "^4.1.0",
     "webpack": "^4.46.0"
+  },
+  "engines": {
+    "node": "14.*",
+    "npm": "6.*"
   }
 }

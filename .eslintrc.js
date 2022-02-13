@@ -18,7 +18,7 @@ module.exports = {
     "no-console": "off",
     "no-debugger": "off",
     "comma-dangle": ["error", "always-multiline"],
-    "prettier/prettier": 1,
     "max-len": ["warn", { code: 80, ignoreComments: true }],
+    "prettier/prettier": 1,
   },
 };

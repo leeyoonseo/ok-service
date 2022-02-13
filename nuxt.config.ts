@@ -52,7 +52,7 @@ const config: NuxtConfig = {
     },
     {
       path: "~/components/layout/",
-      prefix: "layout",
+      prefix: "Base",
       extensions: ["vue"],
     },
     {
@@ -63,7 +63,7 @@ const config: NuxtConfig = {
   buildModules: [
     "@nuxt/typescript-build",
     "@nuxtjs/eslint-module",
-    "@nuxtjs/stylelint-module",
+    // "@nuxtjs/stylelint-module",
   ],
 
   modules: ["@nuxtjs/axios", "@nuxtjs/style-resources"],

@@ -9,11 +9,8 @@ module.exports = {
         "*.scss",
         "*.json",
         "*.d.ts",
-        ".eslintrc.js",
-        ".stylelintrc.js",
-        ".prettierrc.js",
-        "nuxt.config.ts",
-        "webpack.config.js",
+        "*.js",
+        "*.ts",
       ],
       options: {
         singleQuote: false,
