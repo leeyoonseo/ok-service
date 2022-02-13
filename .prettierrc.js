@@ -2,7 +2,7 @@ module.exports = {
   endOfLine: 'auto',
   singleQuote: true,
   quoteProps: "as-needed",
-  printWith: 100,
+  printWidth: 100,
   overrides: [
     {
       files: [
@@ -21,16 +21,3 @@ module.exports = {
     },
   ],
 }
-
-
-  // bracketSpacing: true,
-  // semi: true,
-  // // arrowParens: 'avoid',
-  // // htmlWhitespaceSensitivity: 'css',
-  // // proseWrap: 'preserve',
-  // tabWidth: 2,
-  // // trailingComma: 'all',
-  // // useTabs: false,
-  // // vueIndentScriptAndStyle: false,
-  // // requirePragma: false,
-  // // insertPragma: false,
