@@ -31,6 +31,10 @@ const config: NuxtConfig = {
         type: "image/x-icon",
         href: "/favicon.ico",
       },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap",
+      },
     ],
   },
   dir: {
