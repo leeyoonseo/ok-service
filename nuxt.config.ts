@@ -5,7 +5,7 @@ const config: NuxtConfig = {
     host: "0.0.0.0",
   },
   head: {
-    title: "ok-admin",
+    title: "서비스",
     htmlAttrs: {
       lang: "ko",
     },
@@ -62,14 +62,11 @@ const config: NuxtConfig = {
   ],
   buildModules: [
     "@nuxt/typescript-build",
+    "@nuxtjs/eslint-module",
     "@nuxtjs/stylelint-module",
-    "@nuxtjs/style-resources",
   ],
 
-  modules: [
-    // https://go.nuxtjs.dev/axios
-    "@nuxtjs/axios",
-  ],
+  modules: ["@nuxtjs/axios", "@nuxtjs/style-resources"],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
