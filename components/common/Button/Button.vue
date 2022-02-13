@@ -8,7 +8,7 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'BaseButton',
+  name: 'TheButton',
   methods: {
     handleClick() {
       this.test(123);
