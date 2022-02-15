@@ -1,3 +1,5 @@
+$setting-icon-size: 12px;
+
 header {
   background: #ffffff;
   border-bottom: 1px solid var(--gray-light);
@@ -53,8 +55,6 @@ header {
     }
 
     .my-setting {
-      $size: 12px;
-
       align-items: center;
       background: rgb(0 0 0 / 8%);
       border-radius: 50%;
@@ -97,10 +97,10 @@ header {
 
       .my-setting-icon {
         display: inline-block;
-        height: $size;
-        width: $size;
+        height: $setting-icon-size;
+        width: $setting-icon-size;
 
-        @include bg-image("icon-user-light", $size, $size);
+        @include bg-image("icon-user-light", $setting-icon-size, $setting-icon-size);
       }
 
       &:hover {
@@ -111,8 +111,49 @@ header {
         }
 
         .my-setting-icon {
-          @include bg-image("icon-user-dark", $size, $size);
+          @include bg-image("icon-user-dark", $setting-icon-size, $setting-icon-size);
         }
+      }
+    }
+  }
+
+  &.sticky {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    box-shadow: 0 5px 12px 0 rgb(0 0 0 / 10%);
+
+    .header-logo {
+      color: var(--black);
+    }
+
+    .header-nav {
+
+      .nav-items {
+
+        a {
+          color: var(--black);
+        }
+      }
+    }
+
+    .my-setting {
+      $setting-icon-size: 12px;
+
+      background: #ffffff;
+      border: 1px solid var(--gray);
+
+      .setting {
+
+        .setting-navs {
+
+          li a {
+            color: var(--black);
+          }
+        }
+      }
+
+      .my-setting-icon {
+        @include bg-image("icon-user-dark", $setting-icon-size, $setting-icon-size);
       }
     }
   }

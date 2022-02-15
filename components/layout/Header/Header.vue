@@ -1,5 +1,5 @@
 <template>
-  <header :class="`header header-${$route.name}`">
+  <header :class="classes">
     <div class="header-inner">
       <nuxt-link class="header-logo" to="/">
         <h1 class="logo">OKAYOON</h1>
@@ -37,12 +37,19 @@
 <script lang="ts">
 import Vue from 'vue';
 
+interface INavs {
+  name: string;
+  path: string;
+}
+
 export default Vue.extend({
   name: 'BaseHeader',
   data() {
     return {
-      isLogined: false,
-      isMenuOpened: false,
+      isLogined: false as boolean,
+      isSticky: false as boolean,
+      // TODO: mobile
+      // isMenuOpened: false,
       navs: [
         {
           name: '홈',
@@ -64,13 +71,29 @@ export default Vue.extend({
           name: '네비4',
           path: '/',
         },
-      ],
+      ] as INavs[],
     };
+  },
+  computed: {
+    classes(): string[] {
+      return ['header', `header-${this.$route.name}`, `${this.isSticky ? 'sticky' : ''}`];
+    },
+  },
+  // TODO: throttle!! (lodash -> typescript?)
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
     handleLogin() {
       console.log('handleLogin');
       this.isLogined = !this.isLogined;
+    },
+    handleScroll() {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      this.isSticky = scrollY > 0;
     },
   },
 });

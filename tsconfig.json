@@ -12,6 +12,7 @@
     "allowJs": true,
     "checkJs": true,
     "noImplicitAny": true,
+    "noImplicitThis": true,
     "sourceMap": true,
     "strict": true,
     "noEmit": true,
