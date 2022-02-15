@@ -13,6 +13,8 @@ body {
   color: var(--black);
   font-family: "Noto Sans KR", -apple-system, system-ui, BlinkMacSystemFont, Roboto, Arial, Helvetica, sans-serif;
   font-size: 14px;
+
+  @include scrollbar;
 }
 
 .hidden {

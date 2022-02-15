@@ -1,15 +1,15 @@
 <template>
-  <div>
-    <div>
-      <base-header />
-    </div>
-    <div>
-      <Nuxt />
-    </div>
-
-    <div>
-      <!-- TODO: Footer -->
-      <base-footer />
+  <div class="base-layout">
+    <div class="base-layout-inner">
+      <div class="base-header">
+        <base-header />
+      </div>
+      <div class="base-container">
+        <Nuxt />
+      </div>
+      <div class="base-footer">
+        <base-footer />
+      </div>
     </div>
   </div>
 </template>
@@ -19,3 +19,6 @@ export default Vue.extend({
   name: 'BaseLayout',
 });
 </script>
+<style lang="scss" scoped>
+@import './styles/base.scss';
+</style>

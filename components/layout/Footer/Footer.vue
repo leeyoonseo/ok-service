@@ -1,8 +1,7 @@
 <template>
-  <footer>
-    <div>
-      <span>OKAYOON</span>
-      <span>Copyright</span>
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>okayoon.lee@gmail.com</span>
     </div>
   </footer>
 </template>

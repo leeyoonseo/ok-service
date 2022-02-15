@@ -1,13 +1,15 @@
 <template>
-  <header class="header">
+  <header :class="`header header-${$route.name}`">
     <div class="header-inner">
       <nuxt-link class="header-logo" to="/">
         <h1 class="logo">OKAYOON</h1>
       </nuxt-link>
 
       <ul class="header-nav">
-        <li v-for="(nav, index) in 4" :key="index" class="nav-items">
-          <nuxt-link to="/">{{ `네비${index}` }}</nuxt-link>
+        <li v-for="{ name, path } in navs" :key="name" class="nav-items">
+          <nuxt-link :to="path">
+            {{ name }}
+          </nuxt-link>
         </li>
       </ul>
 
@@ -16,13 +18,16 @@
           <button class="login-button" @click="handleLogin">Sign in</button>
         </template>
         <template v-else>
-          <!-- TODO: 아이콘? -->
           <div class="my-setting">
-            <span class="hidden">Settings</span>
-            <ul class="setting">
-              <li>My info</li>
-              <li>Sign out</li>
-            </ul>
+            <span class="my-setting-icon">
+              <span class="hidden">Settings</span>
+            </span>
+            <div class="setting">
+              <ul class="setting-navs">
+                <li><nuxt-link to="/">My info</nuxt-link></li>
+                <li><nuxt-link to="/">Sign out</nuxt-link></li>
+              </ul>
+            </div>
           </div>
         </template>
       </div>
@@ -37,6 +42,29 @@ export default Vue.extend({
   data() {
     return {
       isLogined: false,
+      isMenuOpened: false,
+      navs: [
+        {
+          name: '홈',
+          path: '/',
+        },
+        {
+          name: '네비1',
+          path: '/',
+        },
+        {
+          name: '네비2',
+          path: '/',
+        },
+        {
+          name: '네비3',
+          path: '/',
+        },
+        {
+          name: '네비4',
+          path: '/',
+        },
+      ],
     };
   },
   methods: {

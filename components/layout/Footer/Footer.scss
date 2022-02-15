@@ -1,3 +1,12 @@
-footer {
-  color: blue;
+.footer {
+  color: var(--gray);
+  height: 30px;
+
+  .footer-inner {
+    box-sizing: border-box;
+    font-size: 12px;
+    line-height: 1;
+    padding: 16px 5%;
+    text-align: center;
+  }
 }

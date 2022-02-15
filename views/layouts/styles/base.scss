@@ -1,0 +1,24 @@
+.base-layout {
+
+  .base-layout-inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .base-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .base-container {
+    box-sizing: border-box;
+    padding-top: 64px;
+  }
+
+  .base-footer {
+    margin-top: auto;
+  }
+}

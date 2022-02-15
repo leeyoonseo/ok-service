@@ -1,9 +1,34 @@
 <template>
-  <div>
-    <div>
-      <h1 class="box">버튼</h1>
-      <the-button />
-    </div>
+  <div class="container-main">
+    <section class="section section-visual">
+      <div class="section-inner">
+        <div class="contents">
+          <h2 class="visual-title">메인입니다</h2>
+          <p>메인의 서브 텍스트 입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-guests">
+      <div class="section-inner">
+        <strong>섹션타이틀</strong>
+        <div class="contents graph"></div>
+      </div>
+    </section>
+
+    <section class="section section-popular">
+      <div class="section-inner">
+        <strong>섹션타이틀</strong>
+        <div class="contents swiper"></div>
+      </div>
+    </section>
+
+    <section class="section section-new">
+      <div class="section-inner">
+        <strong>섹션타이틀</strong>
+        <div class="contents"></div>
+      </div>
+    </section>
   </div>
 </template>
 
