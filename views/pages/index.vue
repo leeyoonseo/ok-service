@@ -9,26 +9,35 @@
       </div>
     </section>
 
-    <section class="section section-guests">
-      <div class="section-inner">
-        <strong>섹션타이틀</strong>
-        <div class="contents graph"></div>
+    <base-section>
+      <strong class="section-title">Section Title</strong>
+      <div class="contents">
+        <ul>
+          <li>테스트</li>
+          <li>테스트</li>
+          <li>테스트</li>
+          <li>테스트</li>
+        </ul>
       </div>
-    </section>
+    </base-section>
 
-    <section class="section section-popular">
+    <!-- TODO: Swiper  -->
+    <!-- <section class="section section-popular">
       <div class="section-inner">
-        <strong>섹션타이틀</strong>
+        <strong>Section Title</strong>
         <div class="contents swiper"></div>
       </div>
-    </section>
+    </section> -->
 
-    <section class="section section-new">
-      <div class="section-inner">
-        <strong>섹션타이틀</strong>
-        <div class="contents"></div>
-      </div>
-    </section>
+    <base-section class="section-guests">
+      <strong>Section Title</strong>
+      <div class="contents graph"></div>
+    </base-section>
+
+    <base-section class="section-new">
+      <strong>Section Title</strong>
+      <div class="contents"></div>
+    </base-section>
   </div>
 </template>
 

@@ -2,12 +2,10 @@
 
   .section {
 
-    .section-inner {
-      padding: 40px 5%;
-
-      & + .section-inner {
-        margin-top: 80px;
-      }
+    .section-title {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 20px;
     }
   }
 
@@ -30,6 +28,29 @@
       .visual-title {
         font-size: 32px;
         margin: 0 0 14px;
+      }
+    }
+  }
+
+  .section-posts {
+
+    .cards {
+      display: flex;
+
+      .card-items {
+        width: calc(20% - 12px);
+
+        & + .card-items {
+          margin-left: 15px;
+        }
+
+        .image-card::v-deep {
+          width: 100%;
+
+          .title {
+            font-size: 18px;
+          }
+        }
       }
     }
   }

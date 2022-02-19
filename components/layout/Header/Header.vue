@@ -76,7 +76,11 @@ export default Vue.extend({
   },
   computed: {
     classes(): string[] {
-      return ['header', `header-${this.$route.name}`, `${this.isSticky ? 'sticky' : ''}`];
+      return [
+        'header',
+        `header-${this.$route.name}`,
+        `${this.isSticky ? 'sticky' : ''}`,
+      ];
     },
   },
   // TODO: throttle!! (lodash -> typescript?)
