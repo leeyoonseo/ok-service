@@ -2,7 +2,7 @@ module.exports = {
   endOfLine: 'auto',
   singleQuote: true,
   quoteProps: "as-needed",
-  printWidth: 100,
+  printWidth: 80,
   overrides: [
     {
       files: [
