@@ -1,5 +1,4 @@
 import { NuxtConfig } from "@nuxt/types";
-
 const config: NuxtConfig = {
   server: {
     host: "0.0.0.0",
@@ -37,9 +36,13 @@ const config: NuxtConfig = {
       },
     ],
   },
+  router: {
+    base: "/",
+  },
   dir: {
     layouts: "views/layouts",
     pages: "views/pages",
+    static: "assets",
   },
   css: ["normalize.css/normalize.css", "~/assets/styles/common.scss"],
   styleResources: {
@@ -53,17 +56,23 @@ const config: NuxtConfig = {
       path: "~/components/common/",
       prefix: "the",
       extensions: ["vue"],
+      pattern: "**/*.vue",
     },
     {
       path: "~/components/layout/",
       prefix: "Base",
       extensions: ["vue"],
+      pattern: "**/*.vue",
     },
     {
       path: "~/components/template/",
       extensions: ["vue"],
+      pattern: "**/*.vue",
     },
   ],
+  publicRuntimeConfig: {
+    baseURL: "/",
+  },
   buildModules: [
     "@nuxt/typescript-build",
     "@nuxtjs/eslint-module",
