@@ -1,0 +1,51 @@
+.image-card {
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 8%);
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 16px;
+  transition: transform 0.5s;
+  vertical-align: top;
+  width: 250px;
+
+  &.button {
+    cursor: pointer;
+  }
+
+  .card-image {
+    border-radius: 25px;
+    margin-bottom: 18px;
+    overflow: hidden;
+    padding-top: 60%;
+    position: relative;
+
+    .image {
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .card-info {
+
+    & > * {
+      display: block;
+    }
+
+    .title {
+      font-size: 22px;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .text {
+      color: var(--gray-dark);
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 20%);
+    transform: translateY(-20px);
+  }
+}
