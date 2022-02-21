@@ -9,6 +9,13 @@
       </div>
     </section>
 
+    <base-section class="section-swiper">
+      <strong class="section-title">Section Title</strong>
+      <div class="contents">
+        <full-swiper />
+      </div>
+    </base-section>
+
     <base-section>
       <strong class="section-title">Section Title</strong>
       <div class="contents">
@@ -20,14 +27,6 @@
         </ul>
       </div>
     </base-section>
-
-    <!-- TODO: Swiper  -->
-    <!-- <section class="section section-popular">
-      <div class="section-inner">
-        <strong>Section Title</strong>
-        <div class="contents swiper"></div>
-      </div>
-    </section> -->
 
     <!-- TODO: Custom Mobile Scroll  -->
     <base-section class="section-posts">

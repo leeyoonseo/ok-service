@@ -12,7 +12,12 @@ const config: NuxtConfig = {
       { charset: "utf-8" },
       {
         name: "viewport",
-        content: "width=device-width, initial-scale=1",
+        content: `
+          width=device-width, 
+          initial-scale=1, 
+          maximum-scale=1, 
+          user-scalable=no
+        `,
       },
       {
         hid: "description",
@@ -49,7 +54,7 @@ const config: NuxtConfig = {
     scss: ["~/assets/styles/utils/*.scss"],
   },
 
-  plugins: [],
+  plugins: [{ src: "~/plugins/swiper.ts", mode: "client" }],
 
   components: [
     {
