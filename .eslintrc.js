@@ -17,8 +17,26 @@ module.exports = {
     // TODO: process.env.NODE_ENV === "production" ? "error" : "off",
     "no-console": "off",
     "no-debugger": "off",
-    "comma-dangle": ["error", "always-multiline"],
-    "max-len": ["warn", { code: 80, ignoreComments: true, ignoreUrls: true }],
+    "comma-dangle": [
+      "error",
+      {
+        arrays: "always-multiline",
+        objects: "always-multiline",
+        imports: "always-multiline",
+        exports: "always-multiline",
+        functions: "never",
+      },
+    ],
+    "max-len": [
+      "warn",
+      {
+        code: 100,
+        ignoreTemplateLiterals: true,
+        ignoreComments: true,
+        ignoreUrls: true,
+        ignoreStrings: true,
+      },
+    ],
     "prettier/prettier": 1,
   },
 };

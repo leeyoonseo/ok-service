@@ -8,11 +8,7 @@
 
     <div class="box">
       <h2>Image Card</h2>
-      <Image-card
-        src="images/img-cat.jpg"
-        title="Image Card Title"
-        text="Image Card Text"
-      />
+      <Image-card src="images/img-cat.jpg" title="Image Card Title" text="Image Card Text" />
       <Image-card
         type="button"
         src="images/img-cat.jpg"
