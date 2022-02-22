@@ -1,0 +1,109 @@
+.full-swiper-wrapper {
+  border-radius: 20px;
+  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 8%);
+  height: 300px;
+  overflow: hidden;
+  transition: transform 0.5s;
+
+  &:hover {
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 20%);
+    transform: translateY(-20px);
+  }
+
+  .full-swiper {
+    height: 100%;
+
+    &-items {
+      background-color: white;
+      display: flex;
+    }
+
+    &-image {
+      border-radius: 20px;
+      overflow: hidden;
+      width: 65%;
+    }
+
+    &-info {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      width: 45%;
+
+      .title {
+        @include ellipsis(2);
+
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      .text {
+        @include ellipsis(7);
+
+        color: var(--gray-dark);
+      }
+    }
+
+    .pagination-wrapper {
+      align-items: center;
+      display: flex;
+      margin-top: auto;
+
+      .prev-button,
+      .next-button {
+        background-color: inherit;
+        height: 20px;
+        width: 20px;
+
+        @include bg-image("icon-arrow-next", 18px, 18px);
+
+        &:hover {
+          @include bg-image("icon-arrow-next-active", 18px, 18px);
+        }
+      }
+
+      .prev-button {
+        transform: scaleX(-1);
+      }
+
+      .next-button {
+        margin-left: 8px;
+      }
+
+      .pagination {
+        align-items: center;
+        display: flex;
+        width: calc(100% - 50px);
+
+        .pagination-index {
+          width: 28px;
+
+          span {
+            color: var(--black);
+            font-size: 12px;
+          }
+
+          span + span {
+
+            &::before {
+              content: "/";
+              display: inline-block;
+              margin-right: 4px;
+            }
+          }
+        }
+
+        .pagination-bar {
+          background: var(--gray);
+          border-radius: 1px;
+          box-sizing: border-box;
+          height: 2px;
+          margin-left: 8px;
+          position: relative;
+          width: calc(100% - 40px);
+        }
+      }
+    }
+  }
+}

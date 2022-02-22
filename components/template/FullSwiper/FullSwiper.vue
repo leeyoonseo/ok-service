@@ -1,11 +1,31 @@
 <template>
   <client-only>
-    <div>
-      <swiper ref="fullSwiper" :options="options">
-        <swiper-slide v-for="(item, index) in 5" :key="index">
-          {{ `Slide ${index}` }}
+    <div
+      class="full-swiper-wrapper"
+      @mouseenter="handleMouseEvents"
+      @mouseleave="handleMouseEvents"
+    >
+      <swiper ref="fullSwiper" :options="options" class="full-swiper">
+        <swiper-slide v-for="(item, index) in data" :key="index" class="full-swiper-items">
+          <div class="full-swiper-image">
+            <img :src="item.src" />
+          </div>
+          <div class="full-swiper-info">
+            <strong class="title">{{ item.title }}</strong>
+            <span class="text">{{ item.text }}</span>
+            <div class="pagination-wrapper">
+              <div class="pagination">
+                <div class="pagination-index">
+                  <span>{{ index + 1 }}</span>
+                  <span>{{ data.length }}</span>
+                </div>
+                <div slot="pagination" class="pagination-bar"></div>
+              </div>
+              <button class="prev-button"></button>
+              <button class="next-button"></button>
+            </div>
+          </div>
         </swiper-slide>
-        <div slot="pagination" class="swiper-pagination"></div>
       </swiper>
     </div>
   </client-only>
@@ -14,18 +34,28 @@
 import Vue from 'vue';
 export default Vue.extend({
   name: 'FullSwiper',
+  props: {
+    data: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
     return {
       options: {
-        // effect: 'fade',
+        effect: 'fade',
         loop: true,
         spaceBetween: 20,
         autoplay: {
           delay: 2500,
           disableOnInteraction: false,
         },
+        navigation: {
+          nextEl: '.next-button',
+          prevEl: '.prev-button',
+        },
         pagination: {
-          el: '.pagination-index',
+          el: '.pagination-bar',
           type: 'progressbar',
         },
         on: {
@@ -45,6 +75,22 @@ export default Vue.extend({
         },
       },
     };
+  },
+  methods: {
+    // handleMouseEvents() {
+    handleMouseEvents({ type }: { type: string }): void {
+      const swiperRef = this.$refs.fullSwiper;
+      if (swiperRef) {
+        console.log('swiperRef', type, swiperRef);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        // const swiper = swiperRef?.$swiper as Vue | Swiper;
+      }
+      // if (type === 'mouseenter') {
+      //   swiperRef.autoplay.stop();
+      // } else {
+      //   swiperRef.autoplay.start();
+      // }
+    },
   },
 });
 </script>

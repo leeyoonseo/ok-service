@@ -12,7 +12,7 @@
     <base-section class="section-swiper">
       <strong class="section-title">Section Title</strong>
       <div class="contents">
-        <full-swiper />
+        <full-swiper :data="swiper" />
       </div>
     </base-section>
 
@@ -60,10 +60,19 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import * as dummy from '~/constants/dummy';
 
 export default Vue.extend({
   name: 'MainPage',
   layout: 'base',
+  data() {
+    return {
+      swiper: [] as dummy.IFullSwiper[],
+    };
+  },
+  created() {
+    this.swiper = dummy.fullSwiper;
+  },
   methods: {
     test2() {
       // const a = [100, 1000000000000, 100, 200, 300, 400, 500, 600, 700, 800];
