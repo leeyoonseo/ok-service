@@ -6,7 +6,7 @@
       "~/*": ["./*"],
       "~/components/*": ["./components/*"],
       "~/plugins/*": ["./plugins/*"],
+      "~/constants/*": ["./constants/*"],
     }
   },
-  // "exclude": ["node_modules", ".nuxt", "dist"]
 }

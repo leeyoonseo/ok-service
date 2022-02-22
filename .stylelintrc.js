@@ -16,6 +16,7 @@ module.exports = {
     "no-duplicate-at-import-rules": true,
     "media-query-list-comma-newline-after": "always",
     "no-descending-specificity": null,
+    "value-no-vendor-prefix": null,
     "selector-pseudo-element-no-unknown": [
       true,
       {
