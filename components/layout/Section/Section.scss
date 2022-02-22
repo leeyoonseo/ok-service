@@ -1,6 +1,8 @@
 .section {
 
   .section-inner {
+    margin: 0 auto;
+    max-width: $layout-max;
     padding: 40px 0;
   }
 
