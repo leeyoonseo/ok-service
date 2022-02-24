@@ -55,11 +55,34 @@
     }
   }
 
-  .section-guests {
+  .section-banner {
+    background: var(--gray-light);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 180px;
 
     .contents {
-      background: var(--gray-light);
-      height: 300px;
+      box-sizing: border-box;
+      max-width: $layout-max;
+      padding: 0 5%;
+
+      & > * {
+        display: block;
+      }
+
+      .title {
+        color: var(--purple-dark);
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+
+      .more {
+        color: var(--gray-dark);
+        font-size: 16px;
+        text-decoration: underline;
+      }
     }
   }
 

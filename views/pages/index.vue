@@ -46,9 +46,11 @@
       </div>
     </base-section>
 
-    <base-section class="section-guests">
-      <strong>Section Title</strong>
-      <div class="contents graph"></div>
+    <base-section type="full" class="section-banner">
+      <div class="contents">
+        <strong class="title">전북도, 매달 10일 '일회용품 없는 날' 지정 운영</strong>
+        <span class="more">Read more</span>
+      </div>
     </base-section>
 
     <base-section class="section-new">
