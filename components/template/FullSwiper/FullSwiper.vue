@@ -77,19 +77,19 @@ export default Vue.extend({
     };
   },
   methods: {
-    // handleMouseEvents() {
-    handleMouseEvents({ type }: { type: string }): void {
-      const swiperRef = this.$refs.fullSwiper;
-      if (swiperRef) {
-        console.log('swiperRef', type, swiperRef);
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        // const swiper = swiperRef?.$swiper as Vue | Swiper;
-      }
-      // if (type === 'mouseenter') {
-      //   swiperRef.autoplay.stop();
-      // } else {
-      //   swiperRef.autoplay.start();
-      // }
+    handleMouseEvents(): void {
+      // TODO: 기능 마무리하기
+      // handleMouseEvents({ type }: { type: string }): void {
+      //   const swiperRef = this.$refs.fullSwiper;
+      //   if (swiperRef) {
+      //     // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      //     const swiper = swiperRef?.$swiper;
+      //   }
+      //   if (type === 'mouseenter') {
+      //     swiperRef.autoplay.stop();
+      //   } else {
+      //     swiperRef.autoplay.start();
+      //   }
     },
   },
 });
